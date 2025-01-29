@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvaTool - Discord Tool</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/75daf56dea.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = async () => {
+            const r = await fetch("/stats");
+            const data = await r.json();
+            document.getElementById("guilds").innerHTML = `${data.guilds.toLocaleString()} Servers`;
+            document.getElementById("users").innerHTML = `${data.users.toLocaleString()} Users`;
+            document.getElementById("shards").innerHTML = `${data.shards.toLocaleString()} Shards`;
+        };
+
+        const invite_redirect = () => {
+            return window.location.href = "/invite";
+        };
+    </script>
+</head>
+<body>
+    <div id="background"></div>
+
+    <div class="nav">
+        <ul>
+            <li>
+                <a class="brand" href="index.html">
+                    <div class="img_container">
+                        <div class="img">
+                            <img 
+                                src="./img/icon.png" 
+                                width="41px" 
+                                height="41px" 
+                                alt="325 Bot Icon"
+                            />
+                        </div>
+                        <div class="text">
+                            <h1>325 Bot</h1>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="link" href="https://discord.gg/c7PtxCJ6gw" target="_blank">
+                    Support
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main_container">
+        <div class="main_text">
+            <h1>325 Bot</h1>
+        </div>
+
+        <div class="boxes">
+            <ul>
+                <li>
+                    <div class="box_container">
+                        <div class="box_content">
+                            <h1>
+                                Features
+                            </h1>
+                        </div>
+                        <p style="line-height: 1.5">
+                            <strong>• </strong>325 Bot est mon projet de bot discord coins,protect,multifunction<br/>
+                            <strong>• </strong>mon projet est en plusieur language different (je parle du language du code)<br/>
+                            <strong>• </strong>Configurable pour tous le monde<br/>
+                            <strong>• </strong>Support actif et à l'écoute<br/>
+                            <strong>• </strong>Bot perso disponible<br/>
+                            <strong>• </strong>Et bien plus encore...<br/>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
